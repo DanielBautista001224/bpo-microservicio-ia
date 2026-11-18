@@ -1,0 +1,90 @@
+{
+  "companias": [
+    {
+      "nombre": "GASES DEL ORINOCO",
+      "categorias": [
+        "RECLAMACION",
+        "INSTALACION",
+        "MANTENIMIENTO",
+        "CONSULTA"
+      ],
+      "palabrasCategoria": {
+        "RECLAMACION": ["estufa", "falla", "fallas", "reclamo", "daño"],
+        "INSTALACION": ["instalar", "instalacion", "instalación", "conexión"],
+        "MANTENIMIENTO": ["mantenimiento", "revision tecnica", "revisión técnica"],
+        "CONSULTA": ["consulta", "informacion", "información", "horario"]
+      },
+      "palabrasPrioridadAlta": [
+        "urgente",
+        "peligro",
+        "fuga",
+        "gas",
+        "riesgo",
+        "emergencia"
+      ],
+      "palabrasPrioridadMedia": [
+        "falla",
+        "daño",
+        "reclamo",
+        "retraso"
+      ],
+      "palabrasPrioridadBaja": [
+        "consulta",
+        "informacion",
+        "horario"
+      ],
+      "gestionExterna": [
+        "RECLAMACION",
+        "INSTALACION",
+        "MANTENIMIENTO"
+      ],
+      "respuestaDirecta": [
+        "CONSULTA"
+      ]
+    },
+    {
+      "nombre": "MENSAJERIA DEL VALLE",
+      "categorias": [
+        "ENTREGA",
+        "RETRASO",
+        "PERDIDA",
+        "DEVOLUCION",
+        "CONSULTA"
+      ],
+      "palabrasCategoria": {
+        "PERDIDA": ["perdido", "perdida", "extraviado", "extraviada"],
+        "DEVOLUCION": ["devolucion", "devolución", "devolver"],
+        "RETRASO": ["retraso", "demora", "no ha llegado"],
+        "ENTREGA": ["entrega", "entregar", "paquete recibido"],
+        "CONSULTA": ["consulta", "informacion", "información", "seguimiento"]
+      },
+      "palabrasPrioridadAlta": [
+        "perdido",
+        "perdida",
+        "extraviado",
+        "urgente",
+        "no recibido"
+      ],
+      "palabrasPrioridadMedia": [
+        "retraso",
+        "demora",
+        "dañado",
+        "averiado"
+      ],
+      "palabrasPrioridadBaja": [
+        "consulta",
+        "informacion",
+        "seguimiento"
+      ],
+      "gestionExterna": [
+        "PERDIDA",
+        "DEVOLUCION"
+      ],
+      "respuestaDirecta": [
+        "CONSULTA",
+        "ENTREGA",
+        "RETRASO"
+      ]
+    }
+  ]
+}
