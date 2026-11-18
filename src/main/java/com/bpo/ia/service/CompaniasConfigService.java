@@ -1,3 +1,4 @@
+
 package com.bpo.ia.service;
 
 import com.bpo.ia.config.ConfigCompania;
@@ -8,6 +9,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +17,7 @@ import java.util.List;
 public class CompaniasConfigService {
 
     private final ObjectMapper objectMapper;
+
     private List<ConfigCompania> companias = new ArrayList<>();
 
     public CompaniasConfigService(ObjectMapper objectMapper) {
@@ -23,10 +26,11 @@ public class CompaniasConfigService {
 
     @PostConstruct
     public void cargarConfiguraciones() {
-        try {
-            JsonNode raiz = objectMapper.readTree(
-                    new ClassPathResource("companias.json").getInputStream()
-            );
+
+        try (InputStream archivo =
+                     new ClassPathResource("companias.json").getInputStream()) {
+
+            JsonNode raiz = objectMapper.readTree(archivo);
 
             JsonNode listaCompanias = raiz.get("companias");
 
@@ -36,17 +40,28 @@ public class CompaniasConfigService {
                 );
             }
 
-            companias = new ArrayList<>();
+            List<ConfigCompania> configuraciones = new ArrayList<>();
 
             for (JsonNode nodo : listaCompanias) {
+
                 ConfigCompania compania =
                         objectMapper.treeToValue(nodo, ConfigCompania.class);
 
-                companias.add(compania);
+                if (compania.getNombre() == null ||
+                        compania.getNombre().isBlank()) {
+                    throw new IllegalStateException(
+                            "Se encontró una compañía sin nombre."
+                    );
+                }
+
+                configuraciones.add(compania);
             }
 
-            System.out.println("Configuraciones de compañías cargadas: "
-                    + companias.size());
+            companias = configuraciones;
+
+            System.out.println(
+                    "Configuraciones de compañías cargadas: " + companias.size()
+            );
 
         } catch (IOException e) {
             throw new IllegalStateException(
@@ -56,6 +71,7 @@ public class CompaniasConfigService {
     }
 
     public ConfigCompania obtenerPorNombre(String nombre) {
+
         if (nombre == null) {
             return null;
         }
@@ -70,4 +86,5 @@ public class CompaniasConfigService {
     public List<ConfigCompania> obtenerTodas() {
         return List.copyOf(companias);
     }
+
 }

@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BPO | Gestión inteligente de solicitudes</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<header class="topbar">
+    <div class="brand">
+        <div class="brand-icon">B</div>
+        <div>
+            <h1>BPO Intelligence</h1>
+            <span>Servicio de procesamiento inteligente</span>
+        </div>
+    </div>
+    <div class="status">
+        <span class="status-dot"></span>
+        Servicio disponible
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="welcome">
+        <span class="eyebrow">CENTRO DE OPERACIONES</span>
+        <h2>Procesamiento de solicitudes</h2>
+        <p>
+            Registra una solicitud para analizar su información,
+            clasificarla y determinar el flujo de atención correspondiente.
+        </p>
+    </section>
+
+    <section class="workspace">
+
+        <div class="form-card">
+            <div class="section-heading">
+                <div>
+                    <span class="step">01 / REGISTRO</span>
+                    <h3>Datos de la solicitud</h3>
+                </div>
+                <span class="required-note">* Campos obligatorios</span>
+            </div>
+
+            <form id="solicitudForm">
+
+                <label for="compania">Compañía *</label>
+                <select id="compania" required>
+                    <option value="">Cargando compañías...</option>
+                </select>
+
+                <label for="solicitudId">Identificador de solicitud *</label>
+                <input
+                        type="text"
+                        id="solicitudId"
+                        placeholder="Ej. SOL-2026-001"
+                        required
+                >
+
+                <label for="descripcion">Descripción de la solicitud *</label>
+                <textarea
+                        id="descripcion"
+                        rows="7"
+                        placeholder="Describe qué ocurrió, cuándo sucedió y qué necesita el cliente..."
+                        required
+                ></textarea>
+
+                <div class="helper">
+                    Incluye la mayor cantidad de información posible
+                    para facilitar el análisis.
+                </div>
+
+                <button type="submit" id="submitButton">
+                    <span>Procesar solicitud</span>
+                    <span aria-hidden="true">→</span>
+                </button>
+
+            </form>
+        </div>
+
+        <aside class="info-card">
+            <div class="info-icon">✦</div>
+            <h3>¿Qué hace el servicio?</h3>
+            <p>El sistema analiza cada solicitud y ejecuta un flujo de procesamiento automatizado.</p>
+
+            <div class="process-list">
+                <div class="process-item">
+                    <span>01</span>
+                    <div>
+                        <strong>Validación</strong>
+                        <small>Verificación de información mínima.</small>
+                    </div>
+                </div>
+                <div class="process-item">
+                    <span>02</span>
+                    <div>
+                        <strong>Clasificación</strong>
+                        <small>Identificación de la categoría y prioridad.</small>
+                    </div>
+                </div>
+                <div class="process-item">
+                    <span>03</span>
+                    <div>
+                        <strong>Decisión</strong>
+                        <small>Selección del flujo de atención.</small>
+                    </div>
+                </div>
+                <div class="process-item">
+                    <span>04</span>
+                    <div>
+                        <strong>Gestión</strong>
+                        <small>Simulación de gestión externa o respuesta directa.</small>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    </section>
+
+    <section id="resultSection" class="result-section hidden">
+        <div class="result-heading">
+            <div>
+                <span class="step">02 / RESULTADO</span>
+                <h3>Análisis de la solicitud</h3>
+            </div>
+            <span id="estadoBadge" class="badge"></span>
+        </div>
+
+        <div id="resultContent"></div>
+    </section>
+
+</main>
+
+<footer>
+    BPO Intelligence · Microservicio de procesamiento de solicitudes
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>

@@ -1,3 +1,4 @@
+
 package com.bpo.ia.config;
 
 import java.util.List;
@@ -6,13 +7,19 @@ import java.util.Map;
 public class ConfigCompania {
 
     private String nombre;
+
     private List<String> categorias;
+
     private List<String> palabrasPrioridadAlta;
     private List<String> palabrasPrioridadMedia;
     private List<String> palabrasPrioridadBaja;
+
     private List<String> gestionExterna;
     private List<String> respuestaDirecta;
+
     private Map<String, List<String>> palabrasCategoria;
+
+    private Map<String, String> plantillasRespuesta;
 
     public ConfigCompania() {
     }
@@ -80,5 +87,14 @@ public class ConfigCompania {
     public void setPalabrasCategoria(
             Map<String, List<String>> palabrasCategoria) {
         this.palabrasCategoria = palabrasCategoria;
+    }
+
+    public Map<String, String> getPlantillasRespuesta() {
+        return plantillasRespuesta;
+    }
+
+    public void setPlantillasRespuesta(
+            Map<String, String> plantillasRespuesta) {
+        this.plantillasRespuesta = plantillasRespuesta;
     }
 }

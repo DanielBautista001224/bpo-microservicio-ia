@@ -13,7 +13,16 @@ public class PlataformaExternaService {
             String solicitudId,
             String tipoSolicitud) {
 
-        // Simulación de creación de caso en plataforma externa
+        if (compania == null || compania.isBlank()
+                || solicitudId == null || solicitudId.isBlank()
+                || tipoSolicitud == null || tipoSolicitud.isBlank()) {
+
+            throw new IllegalArgumentException(
+                    "Los datos para crear el caso externo son obligatorios."
+            );
+        }
+
+        // Simulación de creación de caso en plataforma externa.
         String identificador = UUID.randomUUID()
                 .toString()
                 .substring(0, 8)
@@ -22,7 +31,7 @@ public class PlataformaExternaService {
         String idCaso = "EXT-" + identificador;
 
         System.out.println("----------------------------------");
-        System.out.println("SIMULACION PLATAFORMA EXTERNA");
+        System.out.println("SIMULACIÓN DE PLATAFORMA EXTERNA");
         System.out.println("Compañía: " + compania);
         System.out.println("Solicitud: " + solicitudId);
         System.out.println("Tipo: " + tipoSolicitud);

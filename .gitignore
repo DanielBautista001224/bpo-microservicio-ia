@@ -36,8 +36,8 @@ build/
 
 # Variables de entorno y credenciales
 .env
-.env.*
-!.env.example
+.env.de_ejemplo
+!.env.de_ejemplo
 
 # Base de datos H2 local
 data/

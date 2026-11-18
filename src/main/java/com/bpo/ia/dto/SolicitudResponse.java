@@ -16,6 +16,8 @@ public class SolicitudResponse {
     private String proximoPaso;
     private String justificacion;
     private String estado;
+    private String informacionFaltante;
+    private String respuestaSugerida;
 
     public SolicitudResponse() {
     }
@@ -106,5 +108,20 @@ public class SolicitudResponse {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+    public String getInformacionFaltante() {
+        return informacionFaltante;
+    }
+
+    public void setInformacionFaltante(String informacionFaltante) {
+        this.informacionFaltante = informacionFaltante;
+    }
+
+    public String getRespuestaSugerida() {
+        return respuestaSugerida;
+    }
+
+    public void setRespuestaSugerida(String respuestaSugerida) {
+        this.respuestaSugerida = respuestaSugerida;
     }
 }

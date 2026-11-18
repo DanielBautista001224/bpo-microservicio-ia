@@ -1,3 +1,4 @@
+
 {
   "companias": [
     {
@@ -40,7 +41,10 @@
       ],
       "respuestaDirecta": [
         "CONSULTA"
-      ]
+      ],
+      "plantillasRespuesta": {
+        "CONSULTA": "Estimado cliente, hemos recibido su consulta sobre nuestros servicios de gas natural. Estamos atentos a brindarle la información que necesita."
+      }
     },
     {
       "nombre": "MENSAJERIA DEL VALLE",
@@ -84,7 +88,14 @@
         "CONSULTA",
         "ENTREGA",
         "RETRASO"
-      ]
+      ],
+      "plantillasRespuesta": {
+        "CONSULTA": "Estimado cliente, hemos recibido su consulta sobre el seguimiento de su envío. Estamos atentos a brindarle la información que necesita.",
+        "ENTREGA": "Estimado cliente, hemos recibido su solicitud relacionada con la entrega de su envío.",
+        "RETRASO": "Estimado cliente, lamentamos los inconvenientes ocasionados por el retraso de su envío. Hemos recibido su solicitud y estamos atentos a brindarle información.",
+        "PERDIDA": "",
+        "DEVOLUCION": ""
+      }
     }
   ]
 }
