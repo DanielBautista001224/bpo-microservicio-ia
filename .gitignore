@@ -31,3 +31,19 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### BPO - archivos locales y seguridad ###
+
+# Variables de entorno y credenciales
+.env
+.env.*
+!.env.example
+
+# Base de datos H2 local
+data/
+*.mv.db
+*.trace.db
+
+# Archivos temporales y logs
+*.log
+logs/
